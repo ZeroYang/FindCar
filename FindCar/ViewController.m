@@ -21,6 +21,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    locManager = [[CLLocationManager alloc]init];
+    
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 50, 100)];
     [btn setTitle:@"定位" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -49,16 +51,37 @@
 - (void)getMyCarLocation
 {
     NSLog(@"卧槽");
-    //初始化位置管理器
-    locManager = [[CLLocationManager alloc]init];
-    //设置代理
-    locManager.delegate = self;
-    //设置位置经度
-    locManager.desiredAccuracy = kCLLocationAccuracyBest;
-    //设置每隔100米更新位置
-    locManager.distanceFilter = 50;
-    //开始定位服务
-    [locManager startUpdatingLocation];
+    
+    if (![CLLocationManager locationServicesEnabled]) {
+        NSLog(@"定位服务当前可能尚未打开，请设置打开！");
+        return;
+    }
+    
+    //如果没有授权则请求用户授权
+    if ([CLLocationManager authorizationStatus]==kCLAuthorizationStatusNotDetermined){
+        [locManager requestWhenInUseAuthorization];
+    }else if([CLLocationManager authorizationStatus]==kCLAuthorizationStatusAuthorizedWhenInUse){
+        //设置代理
+        locManager.delegate=self;
+        //设置定位精度
+        locManager.desiredAccuracy=kCLLocationAccuracyBest;
+        //定位频率,每隔多少米定位一次
+        CLLocationDistance distance=10.0;//十米定位一次
+        locManager.distanceFilter=distance;
+        //启动跟踪定位
+        [locManager startUpdatingLocation];
+    }
+    
+//    //初始化位置管理器
+//    locManager = [[CLLocationManager alloc]init];
+//    //设置代理
+//    locManager.delegate = self;
+//    //设置位置经度
+//    locManager.desiredAccuracy = kCLLocationAccuracyBest;
+//    //设置每隔100米更新位置
+//    locManager.distanceFilter = 50;
+//    //开始定位服务
+//    [locManager startUpdatingLocation];
     
 }
 
