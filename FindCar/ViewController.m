@@ -99,6 +99,8 @@
     UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Location"
                                                        message:location delegate:self cancelButtonTitle:@"Ok"otherButtonTitles:nil, nil];
     [alertView show];
+    
+    [self getAddressByLatitude:latitude longitude:longitude];
 
 }
 
@@ -117,6 +119,22 @@
                                                       message:errorMsg delegate:self cancelButtonTitle:@"Ok"otherButtonTitles:nil, nil];
     [alertView show];
     //[alertView release];
+}
+
+#pragma mark 根据坐标取得地名
+-(void)getAddressByLatitude:(CLLocationDegrees)latitude longitude:(CLLocationDegrees)longitude{
+    //反地理编码
+    CLGeocoder *_geocoder=[[CLGeocoder alloc]init];
+    
+    CLLocation *location=[[CLLocation alloc]initWithLatitude:latitude longitude:longitude];
+    [_geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+        CLPlacemark *placemark=[placemarks firstObject];
+        NSLog(@"详细信息:%@",placemark.addressDictionary);
+    }];
+    
+//    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Location"
+//                                                       message:location delegate:self cancelButtonTitle:@"Ok"otherButtonTitles:nil, nil];
+//    [alertView show];
 }
 
 @end

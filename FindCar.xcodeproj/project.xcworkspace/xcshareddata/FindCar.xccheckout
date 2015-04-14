@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>511393DC-F244-471E-907F-514318417C53</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FindCar</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>91E745EAA531DD9D4C15AEFF6AC663FFA58ED489</key>
+		<string>https://github.com/ZeroYang/FindCar.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FindCar.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>91E745EAA531DD9D4C15AEFF6AC663FFA58ED489</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ZeroYang/FindCar.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>91E745EAA531DD9D4C15AEFF6AC663FFA58ED489</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>91E745EAA531DD9D4C15AEFF6AC663FFA58ED489</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FindCar</string>
+		</dict>
+	</array>
+</dict>
+</plist>

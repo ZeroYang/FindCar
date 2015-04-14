@@ -15,6 +15,8 @@
 		7E86725D1ADBF9D700D8405F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E86725C1ADBF9D700D8405F /* Images.xcassets */; };
 		7E8672601ADBF9D700D8405F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E86725E1ADBF9D700D8405F /* LaunchScreen.xib */; };
 		7E86726C1ADBF9D800D8405F /* FindCarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E86726B1ADBF9D800D8405F /* FindCarTests.m */; };
+		7E8672761ADC074F00D8405F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E8672751ADC074F00D8405F /* CoreLocation.framework */; };
+		7E8672781ADC0A3400D8405F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E8672771ADC0A3400D8405F /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		7E8672651ADBF9D800D8405F /* FindCarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindCarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E86726A1ADBF9D800D8405F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E86726B1ADBF9D800D8405F /* FindCarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindCarTests.m; sourceTree = "<group>"; };
+		7E8672751ADC074F00D8405F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7E8672771ADC0A3400D8405F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E8672781ADC0A3400D8405F /* MapKit.framework in Frameworks */,
+				7E8672761ADC074F00D8405F /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +71,8 @@
 		7E8672401ADBF9D700D8405F = {
 			isa = PBXGroup;
 			children = (
+				7E8672771ADC0A3400D8405F /* MapKit.framework */,
+				7E8672751ADC074F00D8405F /* CoreLocation.framework */,
 				7E86724B1ADBF9D700D8405F /* FindCar */,
 				7E8672681ADBF9D800D8405F /* FindCarTests */,
 				7E86724A1ADBF9D700D8405F /* Products */,
@@ -171,6 +179,12 @@
 				TargetAttributes = {
 					7E8672481ADBF9D700D8405F = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = JZ97CAN55X;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					7E8672641ADBF9D800D8405F = {
 						CreatedOnToolsVersion = 6.2;
@@ -349,9 +363,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: 田波 杨 (X8NPULJP96)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FindCar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -359,9 +378,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: 田波 杨 (X8NPULJP96)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FindCar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -418,6 +442,7 @@
 				7E8672711ADBF9D800D8405F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7E8672721ADBF9D800D8405F /* Build configuration list for PBXNativeTarget "FindCarTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +451,7 @@
 				7E8672741ADBF9D800D8405F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
