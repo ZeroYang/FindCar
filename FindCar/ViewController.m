@@ -40,6 +40,8 @@
     [self.view addSubview:btn1];
     
     [self.view setBackgroundColor:[UIColor blueColor]];
+    
+    [self getMyCarLocation];
 
 }
 
@@ -71,18 +73,6 @@
         //启动跟踪定位
         [locManager startUpdatingLocation];
     }
-    
-//    //初始化位置管理器
-//    locManager = [[CLLocationManager alloc]init];
-//    //设置代理
-//    locManager.delegate = self;
-//    //设置位置经度
-//    locManager.desiredAccuracy = kCLLocationAccuracyBest;
-//    //设置每隔100米更新位置
-//    locManager.distanceFilter = 50;
-//    //开始定位服务
-//    [locManager startUpdatingLocation];
-    
 }
 
 - (void)findMyCar
